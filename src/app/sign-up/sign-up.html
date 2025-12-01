@@ -1,0 +1,70 @@
+<div class="signup-container">
+
+  <div class="signup-card">
+    <h2>Create an Account ✨</h2>
+    <p>Please fill the details to register</p>
+
+    <form (ngSubmit)="onSubmit()" #signUpForm="ngForm">
+
+      <!-- Full Name -->
+      <div class="input-group">
+        <input 
+          type="text" 
+          required
+          [(ngModel)]="signup.name" 
+          name="name"
+          placeholder=" "
+        >
+        <label>Full Name</label>
+      </div>
+
+      <!-- Email -->
+      <div class="input-group">
+        <input 
+          type="email" 
+          required
+          [(ngModel)]="signup.email" 
+          name="email"
+          placeholder=" "
+        >
+        <label>Email Address</label>
+      </div>
+
+      <!-- Password -->
+      <div class="input-group">
+        <input 
+          type="password" 
+          required
+          [(ngModel)]="signup.password" 
+          name="password"
+          placeholder=" "
+        >
+        <label>Password</label>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="input-group">
+        <input 
+          type="password" 
+          required
+          [(ngModel)]="signup.confirmPassword" 
+          name="confirmPassword"
+          placeholder=" "
+        >
+        <label>Confirm Password</label>
+      </div>
+
+      <button type="submit" [disabled]="signUpForm.invalid">
+        Create Account
+      </button>
+
+    </form>
+
+    <p class="footer-text">
+      Already have an account?
+      <a routerLink="/" style="text-decoration: underline;">Login</a>
+    </p>
+
+  </div>
+
+</div>

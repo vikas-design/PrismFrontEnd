@@ -1,0 +1,47 @@
+<div class="login-container">
+
+  <div class="login-card">
+    <h2>Welcome Back 👋</h2>
+    <p>Please login to continue</p>
+
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+
+      <!-- Username -->
+      <div class="input-group">
+        <input 
+          type="text" 
+          required
+          [(ngModel)]="login.User_Name" 
+          name="username"
+          placeholder=" "
+        >
+        <label>Username</label>
+      </div>
+
+      <!-- Password -->
+      <div class="input-group">
+        <input 
+          type="password" 
+          required
+          [(ngModel)]="login.password" 
+          name="password"
+          placeholder=" "
+        >
+        <label>Password</label>
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid">
+        Login
+      </button>
+
+    </form>
+
+    
+    <p class="footer-text">
+       Dont have an Account? <a routerLink="/sign-up" style="text-decoration: underline;">Sign Up</a>
+    </p>
+    <p class="footer-text">
+       <a routerLink="/forgot-password" style="text-decoration: underline;">Forgot Password?</a>
+    </p>
+  </div>
+</div>
