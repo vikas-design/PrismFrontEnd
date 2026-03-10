@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class Api {
   
-  private baseUrl = 'https://localhost:44376';
+  private baseUrl = 'https://localhost:7007/api';
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +19,6 @@ export class Api {
 
   // POST API
   login(data: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/Login/Login`, data);
+    return this.http.post(`${this.baseUrl}/Auth`, data);
   }
 }
