@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Api } from '../services/api';
+import { Api } from '../../services/auth.service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 
@@ -25,14 +25,14 @@ export class Login {
     this.api.login(this.login).subscribe({
       next: (res) => {
         debugger
-        if(res.success){
+        if(res.Success){
           localStorage.setItem("user", JSON.stringify(res));
-          this.snackBar.open(res.message, "Close", {
+          this.snackBar.open(res.Message, "Close", {
           duration: 3000
           });
         }
         else{
-          this.snackBar.open(res.message, "Close", {
+          this.snackBar.open(res.Message, "Close", {
           duration: 3000
           });
         }

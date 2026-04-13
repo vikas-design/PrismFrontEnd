@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { Login } from './login/login';
-import { SignUp } from './sign-up/sign-up';
-import { ForgotPassword } from './forgot-password/forgot-password';
+import { Login } from '../components/login/login';
+import { SignUp } from '../components/sign-up/sign-up';
+import { ForgotPassword } from '../components/forgot-password/forgot-password';
 
 export const routes: Routes = [
 
